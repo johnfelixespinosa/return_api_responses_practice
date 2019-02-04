@@ -1,0 +1,5 @@
+<h1><%= book.id %>. <%= book.title %></h1>
+<h2>By: <%= book.author %></h2><br>
+<div id="description-<%= book.id %>"><%= truncate book.description %></div><br>
+
+<button class="js-more" data-id="<%= book.id %>">More...</button>

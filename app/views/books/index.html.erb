@@ -1,0 +1,14 @@
+<% @books.each do |book| %>
+  <%= render partial: "book", locals: {book: book} %>
+<% end %>
+
+<script type="text/javascript" charset="utf-8">
+$(function () {
+  $(".js-more").on('click', function() {
+    let id = $(this).data("id");
+    $.get("/books/" + id + "/description", function(data) {
+      $("#description-" + id).text(data);
+    });
+  });
+});
+</script>
